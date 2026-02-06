@@ -1,10 +1,12 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
+//import { cookies } from 'next/headers';
 
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ deviceId: string }> }
 ) {
+    //const cookiesStore = await cookies();
     const deviceId = (await params).deviceId;
 
     try {
